@@ -1,0 +1,36 @@
+let NFTs = [];
+
+function mintNFT(name, description, owner, rarity) {
+    
+    const NFT = {
+        name: name,
+        description: description,
+        owner: owner,
+        rarity: rarity
+    };
+    
+    NFTs.push(NFT);
+}
+
+function listNFTs() {
+    NFTs.forEach((NFT, index) => {
+        console.log(`NFT #${index + 1}`);
+        console.log(`Name: ${NFT.name}`);
+        console.log(`Description: ${NFT.description}`);
+        console.log(`Owner: ${NFT.owner}`);
+        console.log(`Rarity: ${NFT.rarity}`);
+        console.log('------------------------');
+    });
+}
+
+function getTotalSupply() {
+    return NFTs.length;
+}
+
+mintNFT("Indian Painting", "A beautiful traditional Indian painting", "Varun", "Rare");
+mintNFT("Bollywood Poster", "A vintage Bollywood movie poster", "Ekta", "Common");
+mintNFT("Cricket Memorabilia", "An exclusive cricket bat signed by a famous Indian cricketer", "Jaspreet", "Epic");
+
+listNFTs();
+
+console.log(`Total Supply: ${getTotalSupply()}`);
